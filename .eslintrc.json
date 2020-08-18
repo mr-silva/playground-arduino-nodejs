@@ -3,10 +3,7 @@
     "es6": true,
     "node": true
   },
-  "extends": [
-    "airbnb-base",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -16,10 +13,17 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
+    "no-console": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
